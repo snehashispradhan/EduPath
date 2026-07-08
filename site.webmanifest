@@ -1,0 +1,15 @@
+{
+    "theme_color":  "#0b2d5c",
+    "name":  "EduPath India",
+    "display":  "standalone",
+    "short_name":  "EduPath",
+    "background_color":  "#ffffff",
+    "start_url":  "/",
+    "icons":  [
+                  {
+                      "type":  "image/png",
+                      "sizes":  "376x104",
+                      "src":  "assets/images/logo.png"
+                  }
+              ]
+}

@@ -1,0 +1,18 @@
+EduPath India - Cloudflare Pages Direct Upload Guide
+
+1. Open the Cloudflare dashboard.
+2. Open Workers & Pages, or the current Cloudflare Pages deployment area.
+3. Create a Pages project using Direct Upload.
+4. Upload the CONTENTS of the EduPath-India folder.
+5. Confirm index.html is at the deployment root, not inside an extra nested folder.
+6. Deploy the project.
+7. Add www.edupathindia.com as the custom domain.
+8. Verify both www and non-www behaviour according to your Cloudflare DNS/domain settings.
+9. Test HTTPS after Cloudflare provisions the certificate.
+10. Test the mobile layout on a phone.
+11. Test phone, email, WhatsApp, and Instagram contact links.
+12. Submit https://www.edupathindia.com/sitemap.xml to Google Search Console after launch.
+
+No build command is required.
+No npm install is required.
+No server is required.

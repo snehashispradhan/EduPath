@@ -1,0 +1,57 @@
+[
+  {
+    "_comment": "PLACEHOLDER TESTIMONIALS: Replace every testimonial below with genuine, verified student feedback before publishing. Do not present unverified testimonials as verified.",
+    "studentName": "Aarav Mishra",
+    "course": "B.Tech Computer Science",
+    "city": "Bhubaneswar",
+    "testimonial": "EduPath India helped me compare branches and prepare a cleaner admission checklist. I could discuss options with my family with more confidence.",
+    "rating": 5,
+    "image": "assets/images/student-placeholder-1.svg",
+    "featured": true
+  },
+  {
+    "studentName": "Priya Nair",
+    "course": "MBA",
+    "city": "Cuttack",
+    "testimonial": "The counselling conversation helped me understand MBA specialisations and the questions I should ask colleges before applying.",
+    "rating": 5,
+    "image": "assets/images/student-placeholder-2.svg",
+    "featured": true
+  },
+  {
+    "studentName": "Rohan Das",
+    "course": "BCA",
+    "city": "Rourkela",
+    "testimonial": "I was unsure about BCA and engineering alternatives. EduPath India explained the differences in a practical, student-friendly way.",
+    "rating": 4,
+    "image": "assets/images/student-placeholder-3.svg",
+    "featured": true
+  },
+  {
+    "studentName": "Sanya Patra",
+    "course": "B.Tech Data Science",
+    "city": "Sambalpur",
+    "testimonial": "The guidance was clear and did not pressure me. I got a better sense of course fit and application steps.",
+    "rating": 5,
+    "image": "assets/images/student-placeholder-1.svg",
+    "featured": false
+  },
+  {
+    "studentName": "Aditya Sen",
+    "course": "MBA Business Analytics",
+    "city": "Berhampur",
+    "testimonial": "EduPath India helped me prepare questions for MBA colleges and compare options beyond only brand names.",
+    "rating": 4,
+    "image": "assets/images/student-placeholder-2.svg",
+    "featured": false
+  },
+  {
+    "studentName": "Meera Sahu",
+    "course": "B.Tech Civil Engineering",
+    "city": "Bhubaneswar",
+    "testimonial": "The team helped me organise admission documents and understand why verifying college details directly matters.",
+    "rating": 5,
+    "image": "assets/images/student-placeholder-3.svg",
+    "featured": false
+  }
+]

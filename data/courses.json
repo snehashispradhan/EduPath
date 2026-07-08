@@ -1,0 +1,79 @@
+[
+    {
+        "url":  "engineering-admission.html",
+        "title":  "B.Tech Computer Science",
+        "category":  "Engineering",
+        "summary":  "CSE admission guidance for students comparing private engineering colleges and technology-focused careers.",
+        "location":  "India"
+    },
+    {
+        "url":  "engineering-admission.html",
+        "title":  "B.Tech Artificial Intelligence \u0026 Machine Learning",
+        "category":  "Engineering",
+        "summary":  "Explore AI and Machine Learning engineering pathways with responsible admission counselling.",
+        "location":  "India"
+    },
+    {
+        "url":  "engineering-admission.html",
+        "title":  "B.Tech Data Science",
+        "category":  "Engineering",
+        "summary":  "Understand data-focused engineering programs and compare course fit.",
+        "location":  "India"
+    },
+    {
+        "url":  "engineering-admission.html",
+        "title":  "B.Tech Cyber Security",
+        "category":  "Engineering",
+        "summary":  "Review cyber security engineering admission options and branch expectations.",
+        "location":  "India"
+    },
+    {
+        "url":  "engineering-admission.html",
+        "title":  "B.Tech Mechanical Engineering",
+        "category":  "Engineering",
+        "summary":  "Guidance for mechanical engineering admission and college selection.",
+        "location":  "India"
+    },
+    {
+        "url":  "engineering-admission.html",
+        "title":  "B.Tech Civil Engineering",
+        "category":  "Engineering",
+        "summary":  "Explore civil engineering admission pathways and application steps.",
+        "location":  "India"
+    },
+    {
+        "url":  "engineering-admission.html",
+        "title":  "B.Tech Electrical Engineering",
+        "category":  "Engineering",
+        "summary":  "Compare electrical engineering admission options and course scope.",
+        "location":  "India"
+    },
+    {
+        "url":  "mba-admission.html",
+        "title":  "MBA",
+        "category":  "Management",
+        "summary":  "MBA admission counselling for Finance, Marketing, HR, Operations, and Business Analytics.",
+        "location":  "India"
+    },
+    {
+        "url":  "courses.html#bba",
+        "title":  "BBA",
+        "category":  "Management",
+        "summary":  "Undergraduate management admission guidance for students after 12th.",
+        "location":  "India"
+    },
+    {
+        "url":  "courses.html#bca",
+        "title":  "BCA",
+        "category":  "Computer Applications",
+        "summary":  "Computer applications admission support for software-oriented students.",
+        "location":  "India"
+    },
+    {
+        "url":  "courses.html#mca",
+        "title":  "MCA",
+        "category":  "Computer Applications",
+        "summary":  "Postgraduate computer applications guidance for MCA aspirants.",
+        "location":  "India"
+    }
+]

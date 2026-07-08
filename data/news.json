@@ -1,0 +1,50 @@
+[
+    {
+        "image":  "assets/images/og-image.svg",
+        "slug":  "engineering-admission-guide-2026",
+        "id":  "eng-2026",
+        "category":  "Engineering",
+        "keywords":  [
+                         "engineering admission",
+                         "B.Tech admission",
+                         "CSE admission"
+                     ],
+        "summary":  "A practical overview for students exploring B.Tech admission, engineering branches, and private college guidance in 2026.",
+        "author":  "EduPath India",
+        "publishedDate":  "2026-01-05",
+        "title":  "Engineering Admission Guide 2026",
+        "featured":  true
+    },
+    {
+        "image":  "assets/images/og-image.svg",
+        "slug":  "mba-admission-guide-2026",
+        "id":  "mba-2026",
+        "category":  "MBA",
+        "keywords":  [
+                         "MBA admission",
+                         "MBA counselling",
+                         "management admission"
+                     ],
+        "summary":  "Understand MBA specialisations, college comparison questions, and responsible admission planning for management aspirants.",
+        "author":  "EduPath India",
+        "publishedDate":  "2026-01-08",
+        "title":  "MBA Admission Guide 2026",
+        "featured":  true
+    },
+    {
+        "image":  "assets/images/og-image.svg",
+        "slug":  "odisha-admission-guide-2026",
+        "id":  "odisha-2026",
+        "category":  "Odisha",
+        "keywords":  [
+                         "Admission Odisha",
+                         "college admission Odisha",
+                         "Bhubaneswar college admission"
+                     ],
+        "summary":  "Explore Odisha admission planning across Bhubaneswar, Cuttack, Rourkela, Sambalpur, and Berhampur.",
+        "author":  "EduPath India",
+        "publishedDate":  "2026-01-10",
+        "title":  "Odisha College Admission Guide 2026",
+        "featured":  true
+    }
+]

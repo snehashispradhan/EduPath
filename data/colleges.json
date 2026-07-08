@@ -1,0 +1,30 @@
+[
+    {
+        "summary":  "Compare engineering college options in Bhubaneswar and verify details with institutions.",
+        "url":  "admission-odisha.html",
+        "name":  "Engineering colleges in Bhubaneswar",
+        "type":  "Engineering",
+        "city":  "Bhubaneswar"
+    },
+    {
+        "summary":  "Explore private MBA college options in Bhubaneswar with admission counselling support.",
+        "url":  "admission-odisha.html",
+        "name":  "MBA colleges in Bhubaneswar",
+        "type":  "Management",
+        "city":  "Bhubaneswar"
+    },
+    {
+        "summary":  "Shortlist private colleges in Odisha across engineering, management, and computer applications.",
+        "url":  "admission-odisha.html",
+        "name":  "Private colleges in Odisha",
+        "type":  "Multiple courses",
+        "city":  "Odisha"
+    },
+    {
+        "summary":  "Understand engineering college admission choices across India.",
+        "url":  "engineering-admission.html",
+        "name":  "Engineering colleges India",
+        "type":  "Engineering",
+        "city":  "India"
+    }
+]
