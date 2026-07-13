@@ -154,27 +154,6 @@
     return body;
   }
 
-  function submitWithBeacon(data) {
-    if (!("sendBeacon" in navigator)) return false;
-    const body = getUrlEncodedBody(data).toString();
-    const payload = new Blob([body], { type: "application/x-www-form-urlencoded;charset=UTF-8" });
-    try {
-      return navigator.sendBeacon(ADMISSION_ENQUIRY_ENDPOINT, payload);
-    } catch (error) {
-      return false;
-    }
-  }
-
-  function submitWithFetch(data) {
-    return fetch(ADMISSION_ENQUIRY_ENDPOINT, {
-      method: "POST",
-      mode: "no-cors",
-      keepalive: true,
-      headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
-      body: getUrlEncodedBody(data)
-    });
-  }
-
   function submitWithHiddenForm(data) {
     return new Promise(resolve => {
       const id = `admission-popup-frame-${Date.now()}`;
@@ -222,16 +201,6 @@
     });
   }
 
-  async function sendSubmission(data) {
-    if (submitWithBeacon(data)) return;
-    try {
-      await submitWithFetch(data);
-      return;
-    } catch (error) {
-      await submitWithHiddenForm(data);
-    }
-  }
-
   async function submitForm(event) {
     event.preventDefault();
     if (isSubmitting || !validateForm()) return;
@@ -249,7 +218,7 @@
     setMessage("", "");
 
     try {
-      await sendSubmission(getSubmissionData());
+      await submitWithHiddenForm(getSubmissionData());
       form.reset();
       rememberDismissal();
       setMessage("Thank you! Our admission counsellor will contact you shortly.", "success");
