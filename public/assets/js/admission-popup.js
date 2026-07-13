@@ -12,12 +12,20 @@
   let autoTimer = null;
 
   function recentlyDismissed() {
-    const saved = Number(localStorage.getItem(STORAGE_KEY) || 0);
-    return saved && Date.now() - saved < THREE_DAYS_MS;
+    try {
+      const saved = Number(localStorage.getItem(STORAGE_KEY) || 0);
+      return saved && Date.now() - saved < THREE_DAYS_MS;
+    } catch (error) {
+      return false;
+    }
   }
 
   function rememberDismissal() {
-    localStorage.setItem(STORAGE_KEY, String(Date.now()));
+    try {
+      localStorage.setItem(STORAGE_KEY, String(Date.now()));
+    } catch (error) {
+      // Storage can be unavailable in strict privacy modes. The popup should still work.
+    }
   }
 
   function buildPopup() {
@@ -140,6 +148,33 @@
     };
   }
 
+  function getUrlEncodedBody(data) {
+    const body = new URLSearchParams();
+    Object.entries(data).forEach(([name, value]) => body.set(name, value));
+    return body;
+  }
+
+  function submitWithBeacon(data) {
+    if (!("sendBeacon" in navigator)) return false;
+    const body = getUrlEncodedBody(data).toString();
+    const payload = new Blob([body], { type: "application/x-www-form-urlencoded;charset=UTF-8" });
+    try {
+      return navigator.sendBeacon(ADMISSION_ENQUIRY_ENDPOINT, payload);
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function submitWithFetch(data) {
+    return fetch(ADMISSION_ENQUIRY_ENDPOINT, {
+      method: "POST",
+      mode: "no-cors",
+      keepalive: true,
+      headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+      body: getUrlEncodedBody(data)
+    });
+  }
+
   function submitWithHiddenForm(data) {
     return new Promise(resolve => {
       const id = `admission-popup-frame-${Date.now()}`;
@@ -175,10 +210,26 @@
       };
 
       iframe.addEventListener("load", finish, { once: true });
-      document.body.append(iframe, postForm);
-      postForm.submit();
-      setTimeout(finish, 1800);
+      try {
+        document.body.append(iframe, postForm);
+        postForm.submit();
+        setTimeout(finish, 1800);
+      } catch (error) {
+        iframe.remove();
+        postForm.remove();
+        resolve();
+      }
     });
+  }
+
+  async function sendSubmission(data) {
+    if (submitWithBeacon(data)) return;
+    try {
+      await submitWithFetch(data);
+      return;
+    } catch (error) {
+      await submitWithHiddenForm(data);
+    }
   }
 
   async function submitForm(event) {
@@ -198,7 +249,7 @@
     setMessage("", "");
 
     try {
-      await submitWithHiddenForm(getSubmissionData());
+      await sendSubmission(getSubmissionData());
       form.reset();
       rememberDismissal();
       setMessage("Thank you! Our admission counsellor will contact you shortly.", "success");
