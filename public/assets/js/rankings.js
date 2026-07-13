@@ -23,7 +23,7 @@
 
     const thead = document.createElement('thead');
     const headerRow = document.createElement('tr');
-    ['Rank', 'College', 'City', 'Fees', 'Placement', 'Avg / High', 'Ranking info', 'Source'].forEach((label) => {
+    ['Rank', 'College', 'City', 'Fees', 'Placement', 'Avg / High', 'Ranking info'].forEach((label) => {
       const th = document.createElement('th');
       th.scope = 'col';
       th.textContent = label;
@@ -42,15 +42,6 @@
       tr.appendChild(cell(row.placement));
       tr.appendChild(cell(row.avgHigh));
       tr.appendChild(cell(row.rankingInfo));
-
-      const sourceCell = document.createElement('td');
-      const source = document.createElement('a');
-      source.href = row.sourceUrl;
-      source.target = '_blank';
-      source.rel = 'noopener noreferrer';
-      source.textContent = 'View';
-      sourceCell.appendChild(source);
-      tr.appendChild(sourceCell);
 
       tbody.appendChild(tr);
     });
