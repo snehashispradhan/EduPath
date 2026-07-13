@@ -148,6 +148,47 @@
     };
   }
 
+  function validateAdmissionForm(targetForm, statusElement) {
+    const studentName = targetForm.elements.studentName;
+    const mobileNumber = targetForm.elements.mobileNumber;
+    const emailAddress = targetForm.elements.emailAddress;
+    const interestedCourse = targetForm.elements.interestedCourse;
+
+    studentName.setCustomValidity("");
+    mobileNumber.setCustomValidity("");
+    emailAddress.setCustomValidity("");
+    interestedCourse.setCustomValidity("");
+
+    if (!studentName.value.trim()) studentName.setCustomValidity("Please enter the student name.");
+    if (!/^[6-9][0-9]{9}$/.test(mobileNumber.value.trim())) {
+      mobileNumber.setCustomValidity("Please enter a valid 10-digit Indian mobile number.");
+    }
+    if (emailAddress.value.trim() && !emailAddress.validity.valid) {
+      emailAddress.setCustomValidity("Please enter a valid email address.");
+    }
+    if (!interestedCourse.value) interestedCourse.setCustomValidity("Please select an interested course.");
+
+    if (!targetForm.checkValidity()) {
+      targetForm.reportValidity();
+      if (statusElement) {
+        statusElement.textContent = "Please check the highlighted fields and try again.";
+        statusElement.dataset.type = "error";
+      }
+      return false;
+    }
+    return true;
+  }
+
+  function getAdmissionFormData(targetForm) {
+    return {
+      studentName: targetForm.elements.studentName.value.trim(),
+      mobileNumber: targetForm.elements.mobileNumber.value.trim(),
+      emailAddress: targetForm.elements.emailAddress.value.trim(),
+      interestedCourse: targetForm.elements.interestedCourse.value,
+      preferredLocation: targetForm.elements.preferredLocation.value.trim()
+    };
+  }
+
   function getUrlEncodedBody(data) {
     const body = new URLSearchParams();
     Object.entries(data).forEach(([name, value]) => body.set(name, value));
@@ -240,6 +281,43 @@
     if (event.key === "Escape" && !overlay.hidden) closePopup(true);
   });
   form.addEventListener("submit", submitForm);
+
+  const contactForm = document.querySelector("#contact-admission-form");
+  if (contactForm) {
+    const contactButton = contactForm.querySelector('button[type="submit"]');
+    const contactMessage = contactForm.querySelector(".contact-form__message");
+    let contactSubmitting = false;
+
+    contactForm.addEventListener("submit", async event => {
+      event.preventDefault();
+      if (contactSubmitting || !validateAdmissionForm(contactForm, contactMessage)) return;
+
+      if (contactForm.elements.website.value.trim()) {
+        contactForm.reset();
+        return;
+      }
+
+      contactSubmitting = true;
+      contactButton.disabled = true;
+      contactButton.textContent = "Submitting...";
+      contactMessage.textContent = "";
+      contactMessage.dataset.type = "";
+
+      try {
+        await submitWithHiddenForm(getAdmissionFormData(contactForm));
+        contactForm.reset();
+        contactMessage.textContent = "Thank you! Our admission counsellor will contact you shortly.";
+        contactMessage.dataset.type = "success";
+      } catch (error) {
+        contactMessage.textContent = "We could not submit the form right now. Please try again or contact us on WhatsApp.";
+        contactMessage.dataset.type = "error";
+      } finally {
+        contactSubmitting = false;
+        contactButton.disabled = false;
+        contactButton.textContent = "Request a Callback";
+      }
+    });
+  }
 
   if (!recentlyDismissed()) {
     autoTimer = setTimeout(() => openPopup(false), AUTO_SHOW_DELAY_MS);
