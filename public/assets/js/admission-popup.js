@@ -131,13 +131,54 @@
   }
 
   function getSubmissionData() {
-    const data = new URLSearchParams();
-    data.set("studentName", form.elements.studentName.value.trim());
-    data.set("mobileNumber", form.elements.mobileNumber.value.trim());
-    data.set("emailAddress", form.elements.emailAddress.value.trim());
-    data.set("interestedCourse", form.elements.interestedCourse.value);
-    data.set("preferredLocation", form.elements.preferredLocation.value.trim());
-    return data;
+    return {
+      studentName: form.elements.studentName.value.trim(),
+      mobileNumber: form.elements.mobileNumber.value.trim(),
+      emailAddress: form.elements.emailAddress.value.trim(),
+      interestedCourse: form.elements.interestedCourse.value,
+      preferredLocation: form.elements.preferredLocation.value.trim()
+    };
+  }
+
+  function submitWithHiddenForm(data) {
+    return new Promise(resolve => {
+      const id = `admission-popup-frame-${Date.now()}`;
+      const iframe = document.createElement("iframe");
+      iframe.name = id;
+      iframe.title = "Admission enquiry submission";
+      iframe.hidden = true;
+
+      const postForm = document.createElement("form");
+      postForm.hidden = true;
+      postForm.method = "POST";
+      postForm.action = ADMISSION_ENQUIRY_ENDPOINT;
+      postForm.target = id;
+      postForm.enctype = "application/x-www-form-urlencoded";
+
+      Object.entries(data).forEach(([name, value]) => {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = name;
+        input.value = value;
+        postForm.appendChild(input);
+      });
+
+      let finished = false;
+      const finish = () => {
+        if (finished) return;
+        finished = true;
+        setTimeout(() => {
+          iframe.remove();
+          postForm.remove();
+        }, 500);
+        resolve();
+      };
+
+      iframe.addEventListener("load", finish, { once: true });
+      document.body.append(iframe, postForm);
+      postForm.submit();
+      setTimeout(finish, 1800);
+    });
   }
 
   async function submitForm(event) {
@@ -157,12 +198,7 @@
     setMessage("", "");
 
     try {
-      await fetch(ADMISSION_ENQUIRY_ENDPOINT, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
-        body: getSubmissionData()
-      });
+      await submitWithHiddenForm(getSubmissionData());
       form.reset();
       rememberDismissal();
       setMessage("Thank you! Our admission counsellor will contact you shortly.", "success");
