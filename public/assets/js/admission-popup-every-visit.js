@@ -1,7 +1,5 @@
 (function () {
   const ADMISSION_ENQUIRY_ENDPOINT = "https://script.google.com/macros/s/AKfycbzuXYdBQKrYB-3BL2_L-SCmBMEI9jUBywN4p51VcMy49y15Chfv__ZvLQRUT1GRm3PTJQ/exec";
-  const STORAGE_KEY = "edupathAdmissionPopupClosedAt";
-  const THREE_DAYS_MS = 3 * 24 * 60 * 60 * 1000;
   const AUTO_SHOW_DELAY_MS = 6000;
   const BLOCKED_PATHS = ["/admin", "/login", "/dashboard", "/internal"];
 
@@ -10,23 +8,6 @@
 
   let isSubmitting = false;
   let autoTimer = null;
-
-  function recentlyDismissed() {
-    try {
-      const saved = Number(localStorage.getItem(STORAGE_KEY) || 0);
-      return saved && Date.now() - saved < THREE_DAYS_MS;
-    } catch (error) {
-      return false;
-    }
-  }
-
-  function rememberDismissal() {
-    try {
-      localStorage.setItem(STORAGE_KEY, String(Date.now()));
-    } catch (error) {
-      // Storage can be unavailable in strict privacy modes. The popup should still work.
-    }
-  }
 
   function buildPopup() {
     const shell = document.createElement("div");
@@ -94,8 +75,7 @@
     message.dataset.type = type || "";
   }
 
-  function openPopup(manual) {
-    if (!manual && recentlyDismissed()) return;
+  function openPopup() {
     clearTimeout(autoTimer);
     overlay.hidden = false;
     document.body.classList.add("admission-popup-open");
@@ -106,7 +86,6 @@
   function closePopup(remember) {
     overlay.hidden = true;
     document.body.classList.remove("admission-popup-open");
-    if (remember) rememberDismissal();
     trigger.focus({ preventScroll: true });
   }
 
@@ -247,7 +226,6 @@
     if (isSubmitting || !validateForm()) return;
 
     if (form.elements.website.value.trim()) {
-      rememberDismissal();
       form.reset();
       closePopup(false);
       return;
@@ -261,7 +239,6 @@
     try {
       await submitWithHiddenForm(getSubmissionData());
       form.reset();
-      rememberDismissal();
       setMessage("Thank you! Our admission counsellor will contact you shortly.", "success");
     } catch (error) {
       setMessage("We could not submit the form right now. Please try again or contact us on WhatsApp.", "error");
@@ -272,7 +249,7 @@
     }
   }
 
-  trigger.addEventListener("click", () => openPopup(true));
+  trigger.addEventListener("click", () => openPopup());
   closeButton.addEventListener("click", () => closePopup(true));
   overlay.addEventListener("click", event => {
     if (!dialog.contains(event.target)) closePopup(true);
@@ -319,7 +296,5 @@
     });
   }
 
-  if (!recentlyDismissed()) {
-    autoTimer = setTimeout(() => openPopup(false), AUTO_SHOW_DELAY_MS);
-  }
+  autoTimer = setTimeout(() => openPopup(), AUTO_SHOW_DELAY_MS);
 })();
