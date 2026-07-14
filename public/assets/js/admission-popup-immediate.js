@@ -1,13 +1,11 @@
 (function () {
   const ADMISSION_ENQUIRY_ENDPOINT = "https://script.google.com/macros/s/AKfycbzuXYdBQKrYB-3BL2_L-SCmBMEI9jUBywN4p51VcMy49y15Chfv__ZvLQRUT1GRm3PTJQ/exec";
-  const AUTO_SHOW_DELAY_MS = 6000;
   const BLOCKED_PATHS = ["/admin", "/login", "/dashboard", "/internal"];
 
   const path = window.location.pathname.toLowerCase();
   if (BLOCKED_PATHS.some(blocked => path.startsWith(blocked))) return;
 
   let isSubmitting = false;
-  let autoTimer = null;
 
   function buildPopup() {
     const shell = document.createElement("div");
@@ -76,7 +74,6 @@
   }
 
   function openPopup() {
-    clearTimeout(autoTimer);
     overlay.hidden = false;
     document.body.classList.add("admission-popup-open");
     setMessage("", "");
@@ -296,5 +293,5 @@
     });
   }
 
-  autoTimer = setTimeout(() => openPopup(), AUTO_SHOW_DELAY_MS);
+  openPopup();
 })();
