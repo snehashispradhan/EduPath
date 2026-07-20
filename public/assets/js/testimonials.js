@@ -18,28 +18,14 @@ async function loadTestimonials() {
   }
 }
 
-function testimonialStars(rating = 0) {
-  const count = Math.max(0, Math.min(5, Number(rating) || 0));
-  return "★★★★★".slice(0, count) + "☆☆☆☆☆".slice(count, 5);
-}
-
 function testimonialBanner(testimonial, options = {}) {
   const image = testimonial.bannerImage || testimonial.image || "assets/images/student-placeholder-1.svg";
   const alt = testimonial.bannerAlt || testimonial.alt || `Student testimonial from ${testimonial.studentName || "EduPath India student"}`;
   const loading = options.eager ? "eager" : "lazy";
-  const stars = testimonialStars(testimonial.rating);
   return `<article class="testimonial-banner${options.featured ? " testimonial-banner--featured" : ""}">
     <figure class="testimonial-banner__media">
       <img src="${image}" width="1200" height="675" loading="${loading}" decoding="async" alt="${alt}" data-fallback="${testimonial.image || "assets/images/student-placeholder-1.svg"}">
     </figure>
-    <div class="testimonial-banner__body">
-      <div>
-        <h3>${testimonial.studentName || "EduPath India Student"}</h3>
-        <p><strong>${testimonial.course || "Admission guidance"}</strong>${testimonial.city ? ` · ${testimonial.city}` : ""}</p>
-      </div>
-      <p class="stars" aria-label="${testimonial.rating || 0} out of 5 stars">${stars}</p>
-      <blockquote>${testimonial.testimonial || "Testimonial details will be updated soon."}</blockquote>
-    </div>
   </article>`;
 }
 
