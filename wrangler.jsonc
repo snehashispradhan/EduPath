@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "edupath-225-555",
+  "name": "edusneh",
   "compatibility_date": "2026-07-08",
   "assets": {
     "directory": "public"
