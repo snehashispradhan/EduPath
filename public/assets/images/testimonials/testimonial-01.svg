@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Aarav Mishra testimonial banner</title>
+  <desc id="desc">Premium EduPath India testimonial banner for B.Tech Computer Science guidance.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071a34"/>
+      <stop offset=".56" stop-color="#165daf"/>
+      <stop offset="1" stop-color="#f4aa21"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="#f7fbff"/>
+  <rect x="54" y="54" width="1092" height="567" rx="28" fill="url(#bg)"/>
+  <path d="M808 86h280v120H808zM890 492h198v76H890z" fill="#fff" opacity=".12"/>
+  <path d="M735 405c110-55 210-42 300 39" fill="none" stroke="#fff" stroke-width="9" opacity=".26"/>
+  <circle cx="940" cy="295" r="95" fill="#fff" opacity=".13"/>
+  <text x="118" y="155" fill="#ffd166" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="800">STUDENT TESTIMONIAL</text>
+  <text x="118" y="245" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="54" font-weight="800">Clear branch guidance</text>
+  <text x="118" y="322" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="34">B.Tech Computer Science</text>
+  <text x="118" y="430" fill="#eaf4ff" font-family="Segoe UI,Arial,sans-serif" font-size="32">"I could discuss options with my</text>
+  <text x="118" y="476" fill="#eaf4ff" font-family="Segoe UI,Arial,sans-serif" font-size="32">family with more confidence."</text>
+  <text x="118" y="555" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="800">Aarav Mishra - Bhubaneswar</text>
+</svg>

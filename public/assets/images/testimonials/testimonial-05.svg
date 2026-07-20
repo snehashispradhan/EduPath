@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Aditya Sen testimonial banner</title>
+  <desc id="desc">Premium EduPath India testimonial banner for MBA Business Analytics guidance.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071a34"/>
+      <stop offset=".48" stop-color="#0f6a75"/>
+      <stop offset="1" stop-color="#f4aa21"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="#f7fbff"/>
+  <rect x="54" y="54" width="1092" height="567" rx="28" fill="url(#bg)"/>
+  <path d="M782 164h306v82H782zM782 296h306v82H782zM782 428h306v82H782z" fill="#fff" opacity=".13"/>
+  <path d="M832 205h206M832 337h164M832 469h226" stroke="#ffd166" stroke-width="10" opacity=".5"/>
+  <text x="118" y="155" fill="#ffd166" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="800">STUDENT TESTIMONIAL</text>
+  <text x="118" y="245" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="54" font-weight="800">Beyond brand names</text>
+  <text x="118" y="322" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="34">MBA Business Analytics</text>
+  <text x="118" y="430" fill="#eaf4ff" font-family="Segoe UI,Arial,sans-serif" font-size="32">"I prepared better questions for</text>
+  <text x="118" y="476" fill="#eaf4ff" font-family="Segoe UI,Arial,sans-serif" font-size="32">MBA colleges."</text>
+  <text x="118" y="555" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="800">Aditya Sen - Berhampur</text>
+</svg>

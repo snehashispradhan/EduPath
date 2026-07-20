@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Priya Nair testimonial banner</title>
+  <desc id="desc">Premium EduPath India testimonial banner for MBA admission guidance.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07244b"/>
+      <stop offset=".55" stop-color="#1d8a8a"/>
+      <stop offset="1" stop-color="#f4aa21"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="#f7fbff"/>
+  <rect x="54" y="54" width="1092" height="567" rx="28" fill="url(#bg)"/>
+  <path d="M762 112h300v390H762z" fill="#fff" opacity=".11"/>
+  <path d="M808 168h210M808 232h166M808 296h230M808 360h184" stroke="#fff" stroke-width="13" opacity=".2"/>
+  <circle cx="892" cy="472" r="58" fill="#ffd166" opacity=".5"/>
+  <text x="118" y="155" fill="#ffd166" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="800">STUDENT TESTIMONIAL</text>
+  <text x="118" y="245" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="54" font-weight="800">Better MBA questions</text>
+  <text x="118" y="322" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="34">MBA admission guidance</text>
+  <text x="118" y="430" fill="#eaf4ff" font-family="Segoe UI,Arial,sans-serif" font-size="32">"I understood specialisations and</text>
+  <text x="118" y="476" fill="#eaf4ff" font-family="Segoe UI,Arial,sans-serif" font-size="32">questions to ask colleges."</text>
+  <text x="118" y="555" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="800">Priya Nair - Cuttack</text>
+</svg>

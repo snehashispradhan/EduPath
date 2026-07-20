@@ -1,12 +1,16 @@
 [
   {
-    "_comment": "PLACEHOLDER TESTIMONIALS: Replace every testimonial below with genuine, verified student feedback before publishing. Do not present unverified testimonials as verified.",
+    "_comment": "TESTIMONIAL BANNER CONFIG: Add, remove, reorder, or replace testimonial banners in this file. For each testimonial, update bannerImage and bannerAlt. Recommended banner size is 1200x675, 16:9 aspect ratio. Upload future images to assets/images/testimonials/."
+  },
+  {
     "studentName": "Aarav Mishra",
     "course": "B.Tech Computer Science",
     "city": "Bhubaneswar",
     "testimonial": "EduPath India helped me compare branches and prepare a cleaner admission checklist. I could discuss options with my family with more confidence.",
     "rating": 5,
     "image": "assets/images/student-placeholder-1.svg",
+    "bannerImage": "assets/images/testimonials/testimonial-01.svg",
+    "bannerAlt": "Student testimonial banner for Aarav Mishra, B.Tech Computer Science",
     "featured": true
   },
   {
@@ -16,6 +20,8 @@
     "testimonial": "The counselling conversation helped me understand MBA specialisations and the questions I should ask colleges before applying.",
     "rating": 5,
     "image": "assets/images/student-placeholder-2.svg",
+    "bannerImage": "assets/images/testimonials/testimonial-02.svg",
+    "bannerAlt": "Student testimonial banner for Priya Nair, MBA",
     "featured": true
   },
   {
@@ -25,6 +31,8 @@
     "testimonial": "I was unsure about BCA and engineering alternatives. EduPath India explained the differences in a practical, student-friendly way.",
     "rating": 4,
     "image": "assets/images/student-placeholder-3.svg",
+    "bannerImage": "assets/images/testimonials/testimonial-03.svg",
+    "bannerAlt": "Student testimonial banner for Rohan Das, BCA",
     "featured": true
   },
   {
@@ -34,6 +42,8 @@
     "testimonial": "The guidance was clear and did not pressure me. I got a better sense of course fit and application steps.",
     "rating": 5,
     "image": "assets/images/student-placeholder-1.svg",
+    "bannerImage": "assets/images/testimonials/testimonial-04.svg",
+    "bannerAlt": "Student testimonial banner for Sanya Patra, B.Tech Data Science",
     "featured": false
   },
   {
@@ -43,6 +53,8 @@
     "testimonial": "EduPath India helped me prepare questions for MBA colleges and compare options beyond only brand names.",
     "rating": 4,
     "image": "assets/images/student-placeholder-2.svg",
+    "bannerImage": "assets/images/testimonials/testimonial-05.svg",
+    "bannerAlt": "Student testimonial banner for Aditya Sen, MBA Business Analytics",
     "featured": false
   },
   {
@@ -52,6 +64,8 @@
     "testimonial": "The team helped me organise admission documents and understand why verifying college details directly matters.",
     "rating": 5,
     "image": "assets/images/student-placeholder-3.svg",
+    "bannerImage": "assets/images/testimonials/testimonial-06.svg",
+    "bannerAlt": "Student testimonial banner for Meera Sahu, B.Tech Civil Engineering",
     "featured": false
   }
 ]

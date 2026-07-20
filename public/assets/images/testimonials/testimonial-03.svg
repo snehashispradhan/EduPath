@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Rohan Das testimonial banner</title>
+  <desc id="desc">Premium EduPath India testimonial banner for BCA and course selection guidance.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#061326"/>
+      <stop offset=".5" stop-color="#0b3b78"/>
+      <stop offset="1" stop-color="#15824a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="#f7fbff"/>
+  <rect x="54" y="54" width="1092" height="567" rx="28" fill="url(#bg)"/>
+  <path d="M792 128h250l66 92v288H792z" fill="#fff" opacity=".12"/>
+  <path d="M1042 128v92h66" fill="none" stroke="#fff" stroke-width="8" opacity=".24"/>
+  <path d="M840 286h210M840 348h166M840 410h230" stroke="#ffd166" stroke-width="12" opacity=".45"/>
+  <text x="118" y="155" fill="#ffd166" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="800">STUDENT TESTIMONIAL</text>
+  <text x="118" y="245" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="54" font-weight="800">Course clarity</text>
+  <text x="118" y="322" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="34">BCA and alternatives</text>
+  <text x="118" y="430" fill="#eaf4ff" font-family="Segoe UI,Arial,sans-serif" font-size="32">"EduPath India explained the</text>
+  <text x="118" y="476" fill="#eaf4ff" font-family="Segoe UI,Arial,sans-serif" font-size="32">differences in a practical way."</text>
+  <text x="118" y="555" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="800">Rohan Das - Rourkela</text>
+</svg>
